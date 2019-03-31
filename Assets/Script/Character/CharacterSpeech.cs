@@ -10,7 +10,7 @@ public class CharacterSpeech : MonoBehaviour
     Image speechBubble;
     TextMeshProUGUI speechText;
 
-    bool isSpeaking = false;
+    public bool isSpeaking = false;
 
     float speechTimer;
     float speechDuration;

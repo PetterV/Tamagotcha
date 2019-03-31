@@ -12,32 +12,39 @@ public class CharacterMovement : MonoBehaviour
 
     GameController gameController;
 
+    public GameObject characterSprite;
+
     // Start is called before the first frame update
     void Start()
     {
         gameController = WorldMethods.GetGameController();
+        characterSprite = gameObject.transform.parent.Find("CharacterSprite").gameObject;
     }
 
     // Update is called once per frame
     void Update()
     {
+        
         movementTimer += Time.deltaTime;
 
-        if (movementTimer > movementCooldown)
+        if (movementTimer > movementCooldown && !gameController.gameFrozen)
         {
             readyToMove = true;
         }
 
-        if (readyToMove)
+        if (readyToMove && !gameController.gameFrozen)
         {
-            int movementRoll = gameController.gameRandom.Next(100);
-            if (movementRoll < movementFrequency)
+            if (!gameObject.GetComponent<CharacterNeeds>().makingPublicAppearance && !gameObject.GetComponent<CharacterNeeds>().makingPolitics)
             {
-                //Move
+                int movementRoll = gameController.gameRandom.Next(100);
+                if (movementRoll < movementFrequency)
+                {
+                    //Move
 
-                //TODO: Make another random roll for whether they change direction at all
-                PickMovementDirection();
-                MoveForward(movementForce);
+                    //TODO: Make another random roll for whether they change direction at all
+                    PickMovementDirection();
+                    MoveForward(movementForce);
+                }
             }
             //Reset for next roll
             readyToMove = false;
@@ -56,7 +63,5 @@ public class CharacterMovement : MonoBehaviour
     {
         Rigidbody rb = gameObject.GetComponent<Rigidbody>();
         rb.AddForce(transform.forward * force);
-
-        Debug.Log("Applied force " + transform.forward * force);
     }
 }

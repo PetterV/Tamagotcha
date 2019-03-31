@@ -3,7 +3,9 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Character
+  - CharacterLocation
   layers:
   - Default
   - TransparentFX
@@ -14,7 +16,7 @@ TagManager:
   - 
   - 
   - PostProcessing
-  - 
+  - SpeechBubble
   - 
   - 
   - 
@@ -41,6 +43,18 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Body
+    uniqueID: 3788676337
+    locked: 0
+  - name: Dirt
+    uniqueID: 431630725
+    locked: 0
+  - name: ActionIcons
+    uniqueID: 1303161355
+    locked: 0
   - name: SpeechBubble
     uniqueID: 1849785595
+    locked: 0
+  - name: UI
+    uniqueID: 2542074187
     locked: 0
