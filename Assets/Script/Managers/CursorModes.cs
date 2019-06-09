@@ -46,19 +46,19 @@ public class CursorModes : MonoBehaviour
 
                 if (cleanMode)
                 {
-                    Cursor.SetCursor(cleanCursor, hotSpot, cursorMode);
+                    Cursor.SetCursor(cleanCursor, hotSpot, CursorMode.ForceSoftware);
                 }
                 else if (slapMode)
                 {
-                    Cursor.SetCursor(slapCursor, hotSpot, cursorMode);
+                    Cursor.SetCursor(slapCursor, hotSpot, CursorMode.ForceSoftware);
                 }
                 else if (publicAppearanceMode)
                 {
-                    Cursor.SetCursor(publicAppearanceCursor, hotSpot, cursorMode);
+                    Cursor.SetCursor(publicAppearanceCursor, hotSpot, CursorMode.ForceSoftware);
                 }
                 else if (politicsMode)
                 {
-                    Cursor.SetCursor(politicsCursor, hotSpot, cursorMode);
+                    Cursor.SetCursor(politicsCursor, hotSpot, CursorMode.ForceSoftware);
                 }
                 else
                 {
@@ -70,25 +70,25 @@ public class CursorModes : MonoBehaviour
         {
             if (cleanMode)
             {
-                Cursor.SetCursor(cleanCursorDown, hotSpot, cursorMode);
+                Cursor.SetCursor(cleanCursorDown, hotSpot, CursorMode.ForceSoftware);
                 cursorDown = true;
                 cursorTimer = 0f;
             }
             else if (slapMode)
             {
-                Cursor.SetCursor(slapCursorDown, hotSpot, cursorMode);
+                Cursor.SetCursor(slapCursorDown, hotSpot, CursorMode.ForceSoftware);
                 cursorDown = true;
                 cursorTimer = 0f;
             }
             else if (publicAppearanceMode)
             {
-                Cursor.SetCursor(publicAppearanceCursorDown, hotSpot, cursorMode);
+                Cursor.SetCursor(publicAppearanceCursorDown, hotSpot, CursorMode.ForceSoftware);
                 cursorDown = true;
                 cursorTimer = 0f;
             }
             else if (politicsMode)
             {
-                Cursor.SetCursor(politicsCursorDown, hotSpot, cursorMode);
+                Cursor.SetCursor(politicsCursorDown, hotSpot, CursorMode.ForceSoftware);
                 cursorDown = true;
                 cursorTimer = 0f;
             }
@@ -112,7 +112,7 @@ public class CursorModes : MonoBehaviour
     {
         DisableAllModes();
         cleanMode = true;
-        Cursor.SetCursor(cleanCursor, hotSpot, cursorMode);
+        Cursor.SetCursor(cleanCursor, hotSpot, CursorMode.ForceSoftware);
         cursorDown = false;
         interactionSounds.PlayEmptyClick();
     }
@@ -121,7 +121,7 @@ public class CursorModes : MonoBehaviour
     {
         DisableAllModes();
         slapMode = true;
-        Cursor.SetCursor(slapCursor, hotSpot, cursorMode);
+        Cursor.SetCursor(slapCursor, hotSpot, CursorMode.ForceSoftware);
         cursorDown = false;
         interactionSounds.PlayEmptyClick();
     }
@@ -130,7 +130,7 @@ public class CursorModes : MonoBehaviour
     {
         DisableAllModes();
         publicAppearanceMode = true;
-        Cursor.SetCursor(publicAppearanceCursor, hotSpot, cursorMode);
+        Cursor.SetCursor(publicAppearanceCursor, hotSpot, CursorMode.ForceSoftware);
         cursorDown = false;
         interactionSounds.PlayEmptyClick();
     }
@@ -140,7 +140,7 @@ public class CursorModes : MonoBehaviour
         DisableAllModes();
         politicsMode = true;
         cursorDown = false;
-        Cursor.SetCursor(politicsCursor, hotSpot, cursorMode);
+        Cursor.SetCursor(politicsCursor, hotSpot, CursorMode.ForceSoftware);
         interactionSounds.PlayEmptyClick();
     }
 }

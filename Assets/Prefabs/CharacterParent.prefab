@@ -387,7 +387,7 @@ HingeJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: -0.18, y: 2.14}
-  m_ConnectedAnchor: {x: -0.79071933, y: 1.5810716}
+  m_ConnectedAnchor: {x: -0.79071933, y: 1.5810719}
   m_UseMotor: 0
   m_Motor:
     m_MotorSpeed: 1
@@ -559,7 +559,7 @@ HingeJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: -0.62, y: -2.65}
-  m_ConnectedAnchor: {x: -0.09269091, y: 1.619119}
+  m_ConnectedAnchor: {x: -0.09269091, y: 1.6191193}
   m_UseMotor: 0
   m_Motor:
     m_MotorSpeed: 0
@@ -596,6 +596,7 @@ GameObject:
   - component: {fileID: 3430704031185009074}
   - component: {fileID: 3430704031185009075}
   - component: {fileID: 3430704031185009085}
+  - component: {fileID: 597252012}
   m_Layer: 0
   m_Name: Character
   m_TagString: Untagged
@@ -690,8 +691,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e340af233acd53a48833afcec4f2c217, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementForce: 10000
-  movementFrequency: 80
+  movementForce: 60000
+  movementFrequency: 40
   movementCooldown: 1
   readyToMove: 0
   characterSprite: {fileID: 0}
@@ -730,12 +731,13 @@ MonoBehaviour:
   attentionNeed: 200
   poop: 0
   publicStupidity: 100
+  interactionSounds: {fileID: 0}
   dirtIncrease: 7
   poopIncrease: 20
   publicStupidityIncrease: -10
   attentionNeedIncrease: 25
   dirtReduction: 50
-  slapForce: 1500
+  slapForce: 2500
   attentionNeedReduction: 20
   makingFoolChance: 5
   makingPublicAppearance: 0
@@ -759,10 +761,23 @@ SphereCollider:
   m_GameObject: {fileID: 3430704031185009083}
   m_Material: {fileID: 13400000, guid: e0bfc0d3329c4ba47ad44caf7592bbf9, type: 2}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 0.5
-  m_Center: {x: -0.12, y: 0.09, z: 0}
+  m_Center: {x: -0.12, y: -0.28, z: 0}
+--- !u!65 &597252012
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3430704031185009083}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.83, y: 0.82, z: 3.05}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &3430704031340874874
 GameObject:
   m_ObjectHideFlags: 0
@@ -1252,7 +1267,7 @@ HingeJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: -0.1, y: 0.98}
-  m_ConnectedAnchor: {x: 1.21738, y: -1.764435}
+  m_ConnectedAnchor: {x: 1.21738, y: -1.7644347}
   m_UseMotor: 0
   m_Motor:
     m_MotorSpeed: 0
@@ -1391,7 +1406,7 @@ HingeJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: -0.68, y: -1.56}
-  m_ConnectedAnchor: {x: 1.0422543, y: 1.4218574}
+  m_ConnectedAnchor: {x: 1.0422543, y: 1.4218575}
   m_UseMotor: 0
   m_Motor:
     m_MotorSpeed: 1

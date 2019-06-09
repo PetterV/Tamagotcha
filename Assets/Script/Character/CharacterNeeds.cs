@@ -6,9 +6,9 @@ using UnityEngine.UI;
 public class CharacterNeeds : MonoBehaviour
 {
     float messageTimer = 0;
-    float messageFrequencyTime = 6f;
+    public float messageFrequencyTime = 6f;
     float statIncreaseTimer = 0;
-    float statIncreaseTarget = 1f;
+    float statIncreaseTarget = 1.5f;
     GameController gameController;
     CharacterSpeech characterSpeech;
     PoliticsManager politicsManager;
@@ -29,7 +29,7 @@ public class CharacterNeeds : MonoBehaviour
     [Tooltip("The amount of Dirt gained per second")]
     public int dirtIncrease = 1;
     [Tooltip("The amount of Poop need gained per second")]
-    public int poopIncrease = 3;
+    public int poopIncrease = 20;
     [Tooltip("The amount of Public Stupidity Lost per second")]
     public int publicStupidityIncrease = -1;
     [Tooltip("The amount of Attention Need gained per second")]
@@ -116,7 +116,36 @@ public class CharacterNeeds : MonoBehaviour
             int roll = gameController.gameRandom.Next(100);
             if (roll < 20)
             {
-                characterSpeech.Say("I have very important politics");
+                int secondRoll = gameController.gameRandom.Next(100);
+                if (secondRoll > 90)
+                {
+                    characterSpeech.Say("I have very important politics");
+                }
+                else if (secondRoll > 75)
+                {
+                    characterSpeech.Say("Hardship builds character. Stop complaining, you babies");
+                }
+                else if (secondRoll > 60)
+                {
+                    characterSpeech.Say("If at first you don't succeed... vote again!");
+                }
+                else if (secondRoll > 45)
+                {
+                    characterSpeech.Say("Stay the course, for Queen and Country!");
+                }
+                else if (secondRoll > 30)
+                {
+                    characterSpeech.Say("Anyone born to wealth and priveliege can make it in this country");
+                }
+                else if (secondRoll > 15)
+                {
+                    characterSpeech.Say("Anyone born to wealth and priveliege can make it in this country");
+                }
+                else
+                {
+                    characterSpeech.Say("The class system is actually a *boon* to Britain's working poor");
+                }
+
             }
             messageTimer = 0;
         }
@@ -193,8 +222,8 @@ public class CharacterNeeds : MonoBehaviour
     }
     void IncreasePoop()
     {
-        poop += poopIncrease;
-        if (poop > 900 && !warnedAboutPoop && !characterSpeech.isSpeaking)
+        poop += poopIncreaseValue(poopIncrease);
+        if (poop > 920 && !warnedAboutPoop && !characterSpeech.isSpeaking)
         {
             characterSpeech.Say("Uh oh, here comes a poopie");
             warnedAboutPoop = true;
@@ -204,6 +233,15 @@ public class CharacterNeeds : MonoBehaviour
         {
             Poop();
         }
+    }
+    int poopIncreaseValue(int baseIncrease)
+    {
+        int value = baseIncrease;
+        float valueFactor = (float)attentionNeed / 500f;
+        valueFactor = valueFactor + 1f;
+        float valueFloat = valueFactor * (float)value;
+        value = (int)Mathf.Round(valueFloat);
+        return value;
     }
     void Poop()
     {

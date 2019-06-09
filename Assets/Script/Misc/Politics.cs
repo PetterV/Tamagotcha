@@ -15,7 +15,9 @@ public class Politics : MonoBehaviour
     float lifeTime;
     public float politicsDuration = 5f;
 
-    public int politicsGainBase = 10;
+    public int politicsGainBase = 15;
+
+    public int attentionNeedGain = 5;
 
     // Start is called before the first frame update
     void Start()
@@ -48,7 +50,7 @@ public class Politics : MonoBehaviour
     void PoliticsTick()
     {
         politicsManager.IncreasePolitics(PoliticsGain(politicsGainBase));
-        characterNeeds.attentionNeed = characterNeeds.attentionNeed + 20;
+        characterNeeds.attentionNeed = characterNeeds.attentionNeed + attentionNeedGain;
     }
 
     int PoliticsGain(int basePolitics)
@@ -57,7 +59,7 @@ public class Politics : MonoBehaviour
         float politicsToSubtract = basePolitics * characterNeeds.dirt;
         politicsToGainFloat = politicsToGainFloat - politicsToSubtract;
         politicsToGainFloat = politicsToGainFloat / 1000;
-        int politicsToGain = (int)politicsToGainFloat;
+        int politicsToGain = (int)Mathf.Round(politicsToGainFloat);
         return politicsToGain;
     }
 }

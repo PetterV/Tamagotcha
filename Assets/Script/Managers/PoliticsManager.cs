@@ -116,6 +116,7 @@ public class PoliticsManager : MonoBehaviour
         gameController.gameFrozen = true;
         lost = true;
         failurePanel.SetActive(true);
+        GameObject.Find("Main Camera").GetComponent<InteractionSounds>().PlayGasps();
     }
 
     public void Win()
@@ -124,5 +125,7 @@ public class PoliticsManager : MonoBehaviour
         gameController.gameFrozen = true;
         won = true;
         successPanel.SetActive(true);
+        GameObject.Find("Main Camera").GetComponent<InteractionSounds>().PlayPoopSound();
+        GameObject.Find("Main Camera").GetComponent<InteractionSounds>().PlayPoliticsSound();
     }
 }

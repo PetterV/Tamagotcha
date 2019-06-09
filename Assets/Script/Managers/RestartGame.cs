@@ -8,10 +8,12 @@ public class RestartGame : MonoBehaviour
     public void StartOver()
     {
         SceneManager.LoadScene(0);
+        WorldMethods.GetGameController().gameFrozen = false;
     }
 
     public void StartGame()
     {
         SceneManager.LoadScene(1);
+        WorldMethods.GetGameController().gameFrozen = false;
     }
 }

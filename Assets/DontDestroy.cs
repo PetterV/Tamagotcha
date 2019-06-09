@@ -4,15 +4,18 @@ using UnityEngine;
 
 public class DontDestroy : MonoBehaviour
 {
+    public static bool musicPlayerExists = false;
     // Start is called before the first frame update
     void Start()
     {
-        DontDestroyOnLoad(gameObject);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        if (!musicPlayerExists)
+        {
+            DontDestroyOnLoad(gameObject);
+            musicPlayerExists = true;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 }

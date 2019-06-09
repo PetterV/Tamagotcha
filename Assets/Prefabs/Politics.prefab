@@ -243,7 +243,7 @@ MonoBehaviour:
   character: {fileID: 0}
   progressBar: {fileID: 5171095348413196588}
   politicsDuration: 5
-  politicsGainBase: 30
+  politicsGainBase: 15
 --- !u!1 &6712325124585854439
 GameObject:
   m_ObjectHideFlags: 0

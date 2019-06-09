@@ -98,7 +98,7 @@ MonoBehaviour:
   makingFool: 0
   confidenceLossBase: 2
   confidenceGainBase: 10
-  politicsGainBase: 2
+  politicsGainBase: 5
 --- !u!114 &3454289271747017429
 MonoBehaviour:
   m_ObjectHideFlags: 0
